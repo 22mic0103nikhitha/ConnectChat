@@ -1,71 +1,179 @@
-## Real Talk
+# SyncTalk – Scalable Real-Time Chat Application
 
-Real Talk is a real-time chat application built using the MERN stack (MongoDB, Express.js, React, and Node.js). It allows users to sign up, sign in, and chat with other users in real time. The app utilizes Vite as a build tool, Socket.IO for real-time communication, Daisy UI for styling, JWT for authentication, and Tailwind CSS for UI components. The app is deployed on Render.
+SyncTalk is a real-time messaging application built using the **MERN stack (MongoDB, Express.js, React, Node.js)** and **Socket.IO**.
+The system enables instant communication between users with a responsive interface and scalable backend architecture.
 
-
-![Logo](https://github.com/SarangaSiriwardhana9/RealTalk-Real-Time-Chat-App/assets/99233703/1b2cab50-8929-47a8-b634-5a890934bfe5)
-
-## Screenshots
-
-|   |   |
-|---|---|
-| ![Screenshot 1](https://github.com/SarangaSiriwardhana9/RealTalk-Real-Time-Chat-App/assets/99233703/5142ab7b-88b3-4ee3-8fbd-818f591635a7) | ![Screenshot 2](https://github.com/SarangaSiriwardhana9/RealTalk-Real-Time-Chat-App/assets/99233703/2a72a691-054a-4900-8a42-695ce3a9e9e3) |
-| ![Screenshot 3](https://github.com/SarangaSiriwardhana9/RealTalk-Real-Time-Chat-App/assets/99233703/62828302-80ee-423b-9f6f-2c84eba8e86f) | ![Screenshot 4](https://github.com/SarangaSiriwardhana9/RealTalk-Real-Time-Chat-App/assets/99233703/1e0d870d-13d0-48f4-afc5-0f600c3c8bc2) |
-
+The application also integrates **Redis for real-time user presence tracking and message scalability**, making it closer to production-level chat systems.
 
 ## Features
 
-- User sign up: New users can create an account by signing up with a unique username and password.
-- User sign in: Registered users can sign in using their credentials to access the chat functionality.
-- Real-time chat: Users can engage in real-time conversations with other users, allowing for instant messaging.
-- Secure authentication: JWT is used for secure authentication and authorization of users.
-- Responsive UI: The app is designed to provide a seamless experience across different devices and screen sizes.
+### Real-Time Messaging
 
-## Deployment
--The Real Talk chat app is deployed on Render. 
-**[Live Demo](https://realtalk-opov.onrender.com)**
+Users can send and receive messages instantly using **WebSocket communication with Socket.IO**.
+
+### User Authentication
+
+Secure login and signup system implemented using **JWT authentication**.
+
+### Online User Tracking
+
+The system tracks active users in real-time and displays currently online users.
+
+### Redis Integration
+
+Redis is used for:
+
+* Online user presence tracking
+* Real-time message event scaling using Redis Pub/Sub
+* Improving system performance and scalability
+
+### Responsive UI
+
+The frontend is built with **React + TailwindCSS**, ensuring a modern and responsive chat interface.
+
+---
+
+## Tech Stack
+
+Frontend
+
+* React
+* Vite
+* TailwindCSS
+* DaisyUI
+
+Backend
+
+* Node.js
+* Express.js
+* Socket.IO
+
+Database
+
+* MongoDB
+
+Caching / Scalability
+
+* Redis
+
+Authentication
+
+* JWT (JSON Web Token)
+
+---
+
+## Project Structure
+
+```
+client/
+   src/
+   components/
+   pages/
+
+server/
+   controllers/
+   models/
+   routes/
+   socket/
+   utils/
+```
+
+---
 
 ## Installation
 
-1. Clone the repository:
+### Clone the Repository
 
-   
-   https://github.com/SarangaSiriwardhana9/RealTalk-Real-Time-Chat-App.git
+```
+git clone https://github.com/YOUR_USERNAME/synctalk-chat-app.git
+```
 
-2.Navigate to the client folder and install the dependencies:
+---
 
-   ```bash
-    cd client
-    npm install
-  ```
+### Install Client Dependencies
 
-3.Navigate to the server folder and install the dependencies:
+```
+cd client
+npm install
+```
 
-  ```bash
-    cd ../server
-    npm install
-  ```
+---
 
-#Usage
+### Install Server Dependencies
 
-1.Run the development server for the client:
+```
+cd ../server
+npm install
+```
 
-  ```bash
-   cd client
-   npm run dev
-  ```
+---
 
-2.Run the development server for the server
+### Configure Environment Variables
 
-  ```bash
-   npm run dev
-  ```
+Create a `.env` file inside the **server** directory.
 
-# Future Enhancements
+Example:
 
-- User profiles: Allow users to customize their profiles with avatars, status messages, etc.
-- Group chats: Implement the ability for users to create and participate in group chats.
-- File sharing: Enable users to share files with each other during chat sessions.
-- Notifications: Implement real-time notifications for new messages and other events.
-- Emojis and reactions: Add support for emojis and message reactions.
+```
+PORT=5000
+MONGO_DB_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+NODE_ENV=development
+REDIS_URL=your_redis_connection_string
+```
 
+---
+
+## Running the Application
+
+Start the backend server:
+
+```
+cd server
+npm run dev
+```
+
+Start the frontend client:
+
+```
+cd client
+npm run dev
+```
+
+Open the application in your browser:
+
+```
+http://localhost:3000
+```
+
+---
+
+## Future Improvements
+
+Possible enhancements for the system:
+
+* Group chat functionality
+* File and image sharing
+* Message reactions and emojis
+* Push notifications
+* Message read receipts
+* Typing indicators
+* Chat search functionality
+
+---
+
+## Project Highlights
+
+This project demonstrates:
+
+* Full-stack MERN application development
+* Real-time communication using WebSockets
+* Redis-based caching and Pub/Sub architecture
+* Scalable backend system design
+* Authentication and secure user management
+
+---
+
+## Author
+
+Developed as a full-stack real-time communication system using modern web technologies.
